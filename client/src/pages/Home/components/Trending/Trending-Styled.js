@@ -70,7 +70,7 @@ export const MainTrendingCard = styled(Link)`
 
 export const MainImage = styled.img`
     width: 100%;
-    height: 50%;
+    height: 60%;
     border-radius: 8px;
     background: url(${props => props.url});
 

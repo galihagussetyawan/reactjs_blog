@@ -159,8 +159,8 @@ export const CardImage = styled.div`
 `;
 
 export const Image = styled.div`
-    width: 100%;
-    height: 90%;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background: url(${props => props.url});
     background-repeat: no-repeat;

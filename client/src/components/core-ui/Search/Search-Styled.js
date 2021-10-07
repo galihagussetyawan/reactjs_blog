@@ -8,7 +8,7 @@ export const SearchInput = styled.input`
     width: 100%;
     height: 28px;
     border: 1px solid gainsboro;
-    border-radius: 10px;
+    border-radius: 8px;
     outline: none;
     font-size: 0.9rem;
 

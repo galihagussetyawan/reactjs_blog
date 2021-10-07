@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 
 //Import Ui Components
 import Navbar from '../../components/Navbar/Navbar';
@@ -34,6 +35,9 @@ function Home(props) {
     return (
         <React.Fragment>
             <StyleAll />
+            <Helmet>
+                <title>Loka: Best Programming Blog</title>
+            </Helmet>
 
             <Navbar
                 searchClick={handleClickSearch}

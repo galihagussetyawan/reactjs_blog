@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 //import styled components
 import { AdminContainer, SidebarContainer, LogoContainer, LogoSection, Logo, MenuContainer, MenuSection, MenuItem, MenuList, MenuLink, DashboardContainer } from './Admin-Styled';
@@ -55,6 +56,10 @@ function Admin(props) {
     return (
         <Router history={history} basename="/admin">
             <React.Fragment>
+                <Helmet>
+                    <title>Admin Dashboard</title>
+                </Helmet>
+
                 <StyleAll />
                 <AdminContainer>
                     <SidebarContainer>

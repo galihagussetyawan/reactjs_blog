@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import HTMLParse from 'html-react-parser';
 
@@ -20,6 +21,7 @@ import visitorService from '../../services/Visitor-Service';
 
 //import helper
 import { convertDate } from '../../helpers/ConvertDate';
+import titleCaseConvert from '../../helpers/Title-Case-Convert';
 
 function Post() {
     let { id, title } = useParams();
@@ -63,6 +65,11 @@ function Post() {
                 {content.slice(0).map(data => {
                     return (
                         <PostSection key={data.id}>
+                            {/* tile page post */}
+                            <Helmet>
+                                <title>{titleCaseConvert(data.title)}</title>
+                            </Helmet>
+
                             <TitlePost>{data.title}</TitlePost>
                             <DatePost>{convertDate(data.createdAt)}</DatePost>
                             <ImagePost src={"http://localhost:5000/api/images?id=" + data.images[0].id} />

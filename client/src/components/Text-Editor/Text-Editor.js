@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch, useParams } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -159,6 +160,9 @@ function TextEditor(props) {
 
     return (
         <TextEditorContainer>
+            <Helmet>
+                <title>{isEdit ? "Edit Post: " + title : "Create New Post"}</title>
+            </Helmet>
 
             {/* LEFT COLUMN SECTION */}
 
@@ -191,7 +195,7 @@ function TextEditor(props) {
                             editor.editing.view.change((writer) => {
                                 writer.setStyle(
                                     "height",
-                                    "300px",
+                                    "450px",
                                     editor.editing.view.document.getRoot()
                                 );
                             });
